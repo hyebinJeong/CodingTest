@@ -5,7 +5,7 @@ public class Main {
         // 입력 스트림 생성
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         
-        // 한 줄 입력받기 (예: "1 2")
+        // 한 줄 입력받기
         String input = br.readLine();
         
         // 공백 기준으로 나눠서 배열에 저장
