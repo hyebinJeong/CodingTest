@@ -31,7 +31,7 @@ class Solution {
       	// 경로가 없다면 -1을 반환
         if (toLever == -1) return -1;
         
-        // 레버 -> 출구까지 최단거리를 구하기 
+        // 레버 -> 출구까지 최단거리
         int toExit = bfs(maze, lever, exit, n, m);
       	// 경로가 없다면 -1을 반환
         if (toExit == -1) return -1;
