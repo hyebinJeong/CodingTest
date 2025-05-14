@@ -2,7 +2,7 @@ import java.util.*;
 
 class Solution {
     public int solution(String[] maps) {
-        //✅ 주어진 입력을 사용하기 좋게 전처리한다.
+        // 주어진 입력을 사용하기 좋게 전처리
         int n = maps.length;
         int m = maps[0].length();
         char[][] maze = new char[n][m];
@@ -26,17 +26,17 @@ class Solution {
             }
         }
 
-        //✅ 시작 지점 -> 레버까지 최단거리를 구한다. 
+        // 시작 지점 -> 레버까지 최단거리
         int toLever = bfs(maze, start, lever, n, m);
-      	//✅ 경로가 없다면 -1을 반환한다.
+      	// 경로가 없다면 -1을 반환
         if (toLever == -1) return -1;
         
-        //✅ 레버 -> 출구까지 최단거리를 구한다. 
+        // 레버 -> 출구까지 최단거리를 구하기 
         int toExit = bfs(maze, lever, exit, n, m);
-      	//✅ 경로가 없다면 -1을 반환한다.
+      	// 경로가 없다면 -1을 반환
         if (toExit == -1) return -1;
         
-        //✅ 두 개의 최단거리를 더한 값을 반환한다.
+        // 두 개의 최단거리를 더한 값을 반환
         return toLever + toExit;
     }
 
