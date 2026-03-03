@@ -1,5 +1,17 @@
 def solution(numbers, target):
-    def dfs(i,s):
-        if i == len(numbers): return s == target
-        return dfs(i+1, s+numbers[i]) + dfs(i+1, s-numbers[i])
-    return dfs(0,0)
+    answer = 0
+    
+    def dfs(index, total):
+        nonlocal answer
+        
+        if index == len(numbers):
+            if total == target:
+                answer += 1
+            return
+        
+        # 모든 경우를 만들어내는 구조
+        dfs(index + 1, total + numbers[index])
+        dfs(index + 1, total - numbers[index])
+        
+    dfs(0,0)
+    return answer
